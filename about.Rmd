@@ -1,0 +1,87 @@
+---
+title: "Site Information"
+---
+
+<style>
+body {
+  background-color: #00263a; /* Dark background color */
+  color: white; /* White text color */
+  background-image: url('path/to/your/image.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the whole background */
+  background-repeat: no-repeat; /* Prevent repeating the background image */
+  background-attachment: fixed; /* Keep the image fixed while scrolling */
+}
+
+h1 {
+  color: white; /* Keep h1 headers white */
+}
+
+h2, h3, h4, h5, h6 {
+  color: #dcc100; /* Set other headers color */
+}
+
+a {
+  color: #1E90FF; /* Color for links (adjust if needed) */
+}
+
+code {
+  color: #FFD700; /* Color for code snippets (adjust if needed) */
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Additional Data
+```{r, echo=FALSE, warning=FALSE,message=FALSE}
+
+data<-read.csv("/Users/lizortiz/Library/CloudStorage/OneDrive-FloridaInternationalUniversity/Interships/Miami Waterkeeper/MWK project/Water Quality Engagement Project_CSV.csv")
+
+library(dplyr)
+library(knitr)
+library(kableExtra)
+data[,c(1:3,7,12,13,14, 17, 16, 23,22)] %>% 
+  knitr::kable(col.names = c('Sample Site', 
+                             'Latitude', 
+                             'Longitude',
+                             'Date and Time',
+                             'Water Temperature',
+                             'DO %',
+                             'DO mg/L',
+                             'Tubidity NTU',
+                             'Salinity ppt',
+                             'Pass or Fail', 'Enterococci MPN'))%>%
+  kable_styling() %>%
+  row_spec(0, color = "white", bold = TRUE) %>% 
+  row_spec(1, color = "green", bold = TRUE) %>%
+  row_spec(2, color = "green", bold = TRUE) %>%
+  row_spec(6, color = "green", bold = TRUE) %>%
+  row_spec(3, color = "red", bold = TRUE) %>%
+  row_spec(4, color = "red", bold = TRUE) %>%
+  row_spec(5, color = "red", bold = TRUE)
+```
+
+### Dissolved Oxygen (DO)
+
+- Usable oxygen for fish or other marine created with gills. 
+- Its provided by sea grass, wave action and photosynthetic organism.
+
+### Tubidity
+
+- Turbidity is how we measure water clarity. 
+- High turbidity means there are lots of solid particles in the water. This can block sunlight, decrease growth, and minimize oxygen production. 
+
+### Salinity
+
+- Salinity is the amount of salt in the water. Ocean water has high salinity. 
+- It helps determine what kinds of creatures can live in an environment and how they survive. 
+
+## Sites Images 
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+img <- readPNG("/Users/lizortiz/Library/CloudStorage/OneDrive-FloridaInternationalUniversity/Interships/Miami Waterkeeper/MWK project/mwkimages.png")
+ grid.raster(img)
+```

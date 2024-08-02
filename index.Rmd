@@ -1,0 +1,133 @@
+---
+title: "Water Quality Engagement Project"
+author: "Liz Ortiz Munoz"
+---
+
+
+<style>
+body {
+  background-color: #00263a; /* Dark background color */
+  color: white; /* White text color */
+  background-image: url('path/to/your/image.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the whole background */
+  background-repeat: no-repeat; /* Prevent repeating the background image */
+  background-attachment: fixed; /* Keep the image fixed while scrolling */
+}
+
+h1 {
+  color: white; /* Keep h1 headers white */
+}
+
+h2, h3, h4, h5, h6 {
+  color: #dcc100; /* Set other headers color */
+}
+
+a {
+  color: #1E90FF; /* Color for links (adjust if needed) */
+}
+
+code {
+  color: #FFD700; /* Color for code snippets (adjust if needed) */
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Community Water Quality Day: Engaging Citizens in Monitoring and Improving Local Water Health
+
+### Project Purpose:
+
+The project aims to engage citizens in raising awareness about water quality and invites them to suggest locations where they want to determine if the water is safe for swimming. Once these locations are submitted, Miami Waterkeeper employees will collect and analyze the data and then share the findings with the public. This initiative is intended to involve community members in understanding water quality issues and to provide them with scientific information addressing their concerns.
+
+### Study objective and applicable questions:
+
+This project aims to provide information about enterococci bacteria in local water bodies. The study will occur once, focusing on locations suggested by citizens. It will be conducted during the wet season, characterized by high seasonal runoff, variability, and increased tourism. Alongside assessing enterococci bacteria levels, the project will analyze water characteristics such as temperature, pH, dissolved oxygen (DO), conductivity, and salinity. By examining these factors across different community locations, the project seeks to enhance understanding of water health in Miami.
+
+The primary goal is to engage the community and offer bacterial information. Specifically, the project will answer the question: Are enterococci bacteria levels below 70 CFU/
+MPN per 100ml in the submitted locations?
+
+### Community Engagement
+
+Miami Waterkeeper participated in the Vizcaya Farmer's Market, where community members suggested 11 sites for water quality analysis. Out of these, 6 sites were selected for sample collection.
+
+## Data
+
+```{r, echo=FALSE}
+data<-read.csv("/Users/lizortiz/Library/CloudStorage/OneDrive-FloridaInternationalUniversity/Interships/Miami Waterkeeper/MWK project/Water Quality Engagement Project_CSV.csv")
+```
+
+```{r, echo=FALSE, warning=FALSE,message=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+data[,c(1,7,23,22)]%>% 
+  knitr::kable(col.names = c('Sample Site', 'Date and Time', 'Pass or Fail', 'Enterococci MPN'))%>%
+  kable_styling() %>%
+  row_spec(0, color = "white", bold = TRUE) %>% 
+  row_spec(1, color = "green", bold = TRUE) %>%
+  row_spec(2, color = "green", bold = TRUE) %>%
+  row_spec(6, color = "green", bold = TRUE) %>%
+  row_spec(3, color = "red", bold = TRUE) %>%
+  row_spec(4, color = "red", bold = TRUE) %>%
+  row_spec(5, color = "red", bold = TRUE)
+
+```
+
+## Results
+
+
+```{r pressure, echo=FALSE, warning=FALSE,message=FALSE}
+library(plotly)
+library(magrittr)
+
+
+# Map layout configuration
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'scattermapbox'),
+  center = list(lat = 25.7617, lon = -80.1918),  # Center the map on Miami, FL
+  style = 'open-street-map'  # Use the OpenStreetMap style
+)
+
+# Set your Mapbox access token
+Sys.setenv('MAPBOX_TOKEN' = 'pk.eyJ1IjoibGl6ZG9tYXJ5IiwiYSI6ImNsejh0dms2eTA0cjQya29wbWg5MHBwNDQifQ.8TQEKZ4W7_tYLRKa6t0rWQ')
+
+# Define a color based on pass/fail
+data$color <- ifelse(data$pass_fail == "Pass", "green", "red")
+
+# Create the plot
+fig <- plot_mapbox(data, lat = ~Latitude, lon = ~Longitude) %>%
+  add_markers(
+    marker = list(
+      color = ~color,
+      size = 10  # Adjust marker size as needed
+    ),
+    text = ~paste(
+      paste("Sample Site: ",Sample.Site), 
+      paste("Date and Time: ",DateTime), 
+      paste("Pass or Fail: ",pass_fail), 
+      paste("Enterococci MPN: ", EnterococciMPN), 
+      sep = "<br />"
+    )
+  )
+
+# Set layout and Mapbox style with legend
+fig <- fig %>% layout(
+  title = 'MWK: Water Quality Engagement Project',
+  mapbox = list(
+    style = 'open-street-map',  # OpenStreetMap style
+    zoom = 8,  # Adjust zoom level as needed
+    center = list(lat = 25.7617, lon = -80.1918)
+  )
+)
+
+# Display the map
+fig
+
+```
+
+### Discussion and Conclusion 
+
+Three of the six sites sampled met the acceptable criteria for enterococci levels, while three did not. The sites closer to the coast generally exhibited lower enterococci levels, indicating better water quality, whereas the inland sites showed higher levels. This pattern suggests that coastal influences contribute to improved water quality in terms of enterococci levels compared to inland areas. The elevated enterococci levels at inland sites may indicate potential sources of contamination or distinct environmental conditions affecting water quality. These findings highlight the importance of considering location and proximity to the coast in water quality assessments and underscore the need for enhanced water management practices in inland areas.

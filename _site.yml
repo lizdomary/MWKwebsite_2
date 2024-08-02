@@ -1,0 +1,8 @@
+name: "my-website"
+navbar:
+  title: "Miami Waterkepper"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Additional Information"
+      href: about.html
