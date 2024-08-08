@@ -37,20 +37,28 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Community Water Quality Day: Engaging Citizens in Monitoring and Improving Local Water Health
 
-### Project Purpose:
+### Project Objective:
 
-The project aims to engage citizens in raising awareness about water quality and invites them to suggest locations where they want to determine if the water is safe for swimming. Once these locations are submitted, Miami Waterkeeper employees will collect and analyze the data and then share the findings with the public. This initiative is intended to involve community members in understanding water quality issues and to provide them with scientific information addressing their concerns.
+This pilot project aims to engage residents in raising awareness about water quality and invites them to suggest locations where they want to determine if the water is safe for swimming. Once these locations are submitted, Miami Waterkeeper employees will collect and analyze the data and then share the findings with the public. By gathering community feedback and providing a platform for residents to identify areas of interest, we aim to deliver targeted scientific information that directly addresses their concerns about water safety.
+
+The primary goal is to engage the community and offer bacterial information. Specifically, the project will answer the question: Are enterococci bacteria levels below 70 CFU/ MPN per 100ml in the submitted locations?
+
+#### Why enterococci bacteria?
+
+Fecal indicator bacteria (FIB) are microbes that are often found alongside harmful bacteria and viruses present in fecal matter. While FIBs themselves do not directly cause illness, their presence suggests that pathogenic organisms may be in the water. E. coli is the recommended indicator for freshwater environments, while enterococci are used for saltwater.
+
+The EPA has established the following guidelines for safe swimming conditions:
+
+- 0-70 cfu/mL of enterococci: Safe for swimming
+- Above 70 cfu/mL of enterococci: Not safe for swimming
 
 ### Study objective and applicable questions:
 
-This project aims to provide information about enterococci bacteria in local water bodies. The study will occur once, focusing on locations suggested by citizens. It will be conducted during the wet season, characterized by high seasonal runoff, variability, and increased tourism. Alongside assessing enterococci bacteria levels, the project will analyze water characteristics such as temperature, pH, dissolved oxygen (DO), conductivity, and salinity. By examining these factors across different community locations, the project seeks to enhance understanding of water health in Miami.
+This project aims to provide information about enterococci bacteria in local water bodies. The study will occur once, focusing on locations suggested by community members. It will be conducted during the wet season, characterized by higher stormwater runoff, which can lead to higher environmental variability. Alongside assessing enterococci bacteria levels, the project will analyze water characteristics such as water temperature, pH, dissolved oxygen (DO), conductivity, and salinity. By examining these factors across different community locations, the project seeks to enhance understanding of water health in Miami.
 
-The primary goal is to engage the community and offer bacterial information. Specifically, the project will answer the question: Are enterococci bacteria levels below 70 CFU/
-MPN per 100ml in the submitted locations?
+### Methods
 
-### Community Engagement
-
-Miami Waterkeeper participated in the Vizcaya Farmer's Market, where community members suggested 11 sites for water quality analysis. Out of these, 6 sites were selected for sample collection.
+Miami Water Keepers participated in the Vizcaya Farmer’s Market, where community members suggested 11 sites for water quality analysis. Out of these, 6 sites were selected for sample collection based on whether they were accessible. We did not select sites that were already sampled by other organizations. 
 
 ## Data
 
