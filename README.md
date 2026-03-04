@@ -1,6 +1,8 @@
 Community Water Quality Day: Engaging Citizens in Monitoring and Improving Local Water Health
 
 Website: https://spontaneous-pika-80a117.netlify.app
+The main code can be found in the index.Rmd file
+
 
 Project Overview
 
@@ -13,13 +15,10 @@ Purpose of the Project
 
 The main goals of this project are:
 
--To engage citizens in identifying water quality concerns in their communities.
-
--To analyze the presence of enterococci bacteria, an indicator of fecal contamination, in citizen-submitted water bodies.
-
--To assess accompanying water quality parameters: temperature, pH, dissolved oxygen (DO), conductivity, and salinity.
-
--To share findings with the public in an understandable and interactive format.
+- To engage citizens in identifying water quality concerns in their communities.
+- To analyze the presence of enterococci bacteria, an indicator of fecal contamination, in citizen-submitted water bodies.
+- To assess accompanying water quality parameters: temperature, pH, dissolved oxygen (DO), conductivity, and salinity.
+- To share findings with the public in an understandable and interactive format.
 
 Sampling was conducted once during the wet season, when runoff, variability, and recreational water use are high.
 
@@ -32,13 +31,10 @@ Repository Contents
 
 This GitHub repository contains the code and files used for:
 
--Cleaning and analyzing water quality data collected from citizen-nominated locations.
-
--Visualizing enterococci and water quality metrics across sites.
-
--Preparing data outputs for public communication and report generation.
-
--Building a website or dashboard to share results with the community in an interactive format.
+- Cleaning and analyzing water quality data collected from citizen-nominated locations.
+- Visualizing enterococci and water quality metrics across sites.
+- Preparing data outputs for public communication and report generation.
+- Building a website or dashboard to share results with the community in an interactive format.
 
 
 Acknowledgments
