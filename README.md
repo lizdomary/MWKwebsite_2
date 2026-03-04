@@ -1,7 +1,7 @@
 Community Water Quality Day: Engaging Citizens in Monitoring and Improving Local Water Health
 
-Website: https://spontaneous-pika-80a117.netlify.app
-The main code can be found in the index.Rmd file
+- Website: https://spontaneous-pika-80a117.netlify.app
+- The main code can be found in the index.Rmd file
 
 
 Project Overview
